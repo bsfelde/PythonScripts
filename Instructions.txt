@@ -5,3 +5,8 @@ git status
 git add -A
 git commit -m "what changed"
 git push
+
+- if full commit message comes up
+	esc key
+	:wq
+	enter key
