@@ -1,0 +1,7 @@
+https://github.com/bsfelde/PythonScripts.git
+
+cd Desktop/GitHub/PythonScripts
+git status
+git add -A
+git commit -m "what changed"
+git push
