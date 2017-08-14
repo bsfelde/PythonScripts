@@ -68,7 +68,3 @@ def likes(names):
         return '%s, %s and ' %(names[0], names[1]) + str(subs) + ' others like this'
     else:
         pass
-
--------------------------------------
-
-testtest123
