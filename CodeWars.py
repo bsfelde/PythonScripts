@@ -68,3 +68,20 @@ def likes(names):
         return '%s, %s and ' %(names[0], names[1]) + str(subs) + ' others like this'
     else:
         pass
+
+-------------------------------------
+
+PigLatin:
+
+def pig_it(text):
+    pigly = []
+    for word in text.split():
+        if word[0] in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM':
+            pigly.append(word[1:] + word[0] + 'ay')
+        elif word[0] not in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM':
+            pigly.append(word)
+    return ' '.join(pigly)
+	
+def pig_it(text):
+    pigly = [word[1:] + word[0] + 'ay' if word[0] in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM' else word for word in text.split()]
+    return ' '.join(pigly)
