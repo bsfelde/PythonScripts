@@ -205,7 +205,7 @@ def main():
 
 	#L1 = 
 	#x = TotalSum(dater)
-	print 'Changing B307 and L307 to L104 total'
+	print 'Changing B307 and L305 to L104 total'
 	print '\n'
 
 	totalSum(dater)
@@ -214,7 +214,7 @@ def main():
 	print '\n\n'
 
 	#print dater
-	print 'Writing new file, UPS-redrop.txt, to Desktop..'
+	print 'Writing new file, UPS-redrop, to Desktop..'
 
 	fileWriter(dater)
 
