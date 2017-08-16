@@ -87,3 +87,17 @@ def pig_it(text):
 def pig_it(text):
     pigly = [word[1:] + word[0] + 'ay' if word[0] in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM' else word for word in text.split()]
     return ' '.join(pigly)
+
+-------------------------------------
+
+Find the Vowels:
+
+def vowel_indices(word):
+    vowels = []
+    for i, j in enumerate(word):
+        if j.lower() in ('a','e','i','o','u','y'):
+            vowels.append(i+1)
+    return vowels
+
+def vowel_indices(word):
+    return [i+1 for i,j in enumerate(word) if j.lower() in ('a','e','i','o','u','y')]
