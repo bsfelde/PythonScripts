@@ -101,3 +101,36 @@ def vowel_indices(word):
 
 def vowel_indices(word):
     return [i+1 for i,j in enumerate(word) if j.lower() in ('a','e','i','o','u','y')]
+
+-------------------------------------
+
+Mumbling:
+
+def accum(s):
+    new = []
+    for i,x in enumerate(s):
+        new.append(x.upper()+ (x.lower()*i))
+    return '-'.join(new)
+
+def accum(s):
+    return '-'.join([x.upper() + (x.lower()*i) for i,x in enumerate(s)])
+
+-------------------------------------
+
+Decode the Morse:
+
+def decodeMorse(morseCode):
+    words = morseCode.replace('   ','  ')
+    letters = words.split(' ')
+    new = []
+    for x in letters:
+        if x == '':
+            new.append(' ')
+        else:
+            new.append(MORSE_CODE[x])
+    return (''.join(new)).strip()
+
+def decodeMorse(morseCode):
+    words = morseCode.replace('   ','  ')
+    letters = words.split(' ')
+    return (''.join([' ' if x == '' else MORSE_CODE[x] for x in letters])).strip()
