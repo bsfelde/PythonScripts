@@ -134,3 +134,33 @@ def decodeMorse(morseCode):
     words = morseCode.replace('   ','  ')
     letters = words.split(' ')
     return (''.join([' ' if x == '' else MORSE_CODE[x] for x in letters])).strip()
+
+-------------------------------------
+
+CamelCase Method:
+
+def camel_case(string):
+    return ''.join([x[0].upper() + x[1:] for x in string.split()])
+
+-------------------------------------
+
+WeIrD StRiNg CaSe:
+
+def to_weird_case(string):
+    weird = []
+    for x in string.split():
+        letters = []
+        for i,m in enumerate(x):
+            if i % 2 == 0:
+                letters.append(m.upper())
+            else:
+                letters.append(m.lower())
+        weird.append(''.join(letters))
+    return ' '.join(weird)
+
+def to_weird_case(string):
+    weird = []
+    for x in string.split():
+        letters = ''.join([m.upper() if i % 2 == 0 else m.lower() for i,m in enumerate(x)])
+        weird.append(letters)
+    return ' '.join(weird)
