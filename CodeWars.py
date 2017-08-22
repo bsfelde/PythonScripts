@@ -1,15 +1,6 @@
 Array.diff:
+#remove all values in list B that are in list A
 
-Your goal in this kata is to implement an difference function, which subtracts one list from another.
-
-It should remove all values from list a, which are present in list b.
-
-array_diff([1,2],[1]) == [2]
-If a value is present in b, all of its occurrences must be removed from the other:
-
-array_diff([1,2,2,2,3],[2]) == [1,3]
-
-Solution:
 def array_diff(a, b):
     new = [value for value in a if value not in b]
     return new
@@ -17,6 +8,8 @@ def array_diff(a, b):
 -------------------------------------
 
 Facebooks Likes
+#list of names, return those names in string 
+#following pattern based on amount of names in list
 
 def likes(names):
     if len(names) == 0:
@@ -37,6 +30,8 @@ def likes(names):
 -------------------------------------
 
 PigLatin:
+#takes first letter to end of word, plus 'ay'
+#except special characters
 
 def pig_it(text):
     pigly = []
@@ -54,12 +49,14 @@ def pig_it(text):
 -------------------------------------
 
 Find the Vowels:
+#returns the position of the vowel in a word
 
 def vowel_indices(word):
     vowels = []
     for i, j in enumerate(word):
         if j.lower() in ('a','e','i','o','u','y'):
             vowels.append(i+1)
+            #to make the first letter be index 1
     return vowels
 
 def vowel_indices(word):
@@ -68,6 +65,7 @@ def vowel_indices(word):
 -------------------------------------
 
 Mumbling:
+#ex) 'abcd' --> 'A-Bb-Ccc-Dddd'
 
 def accum(s):
     new = []
@@ -82,16 +80,36 @@ def accum(s):
 
 Decode the Morse:
 
+MORSE_CODE = {
+    '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E', '..-.': 'F',
+    '--.': 'G', '....': 'H', '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L',
+    '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P', '--.-': 'Q', '.-.': 'R',
+    '...': 'S', '-': 'T', '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
+    '-.--': 'Y', '--..': 'Z',
+    '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4',
+    '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9',
+    '.-.-.-': '.', '--..--': ',', '..--..': '?', '.----.': "'", '-.-.--': '!',
+    '-..-.': '/', '-.--.': '(', '-.--.-': ')', '.-...': '&', '---...': ':',
+    '-.-.-.': ';', '-...-': '=', '.-.-.': '+', '-....-': '-', '..--.-': '_',
+    '.-..-.': '"', '...-..-': '$', '.--.-.': '@', '...---...': 'SOS'
+}
+
 def decodeMorse(morseCode):
     words = morseCode.replace('   ','  ')
+    #separate the morst code into a list
+    #turns spaces into blank value
     letters = words.split(' ')
+    #splits words into letters
     new = []
     for x in letters:
         if x == '':
             new.append(' ')
+        	#to maintain spaces between words
         else:
             new.append(MORSE_CODE[x])
+            #function to convert morse code to letter
     return (''.join(new)).strip()
+    #remove leading and ending spaces in values
 
 def decodeMorse(morseCode):
     words = morseCode.replace('   ','  ')
@@ -101,6 +119,7 @@ def decodeMorse(morseCode):
 -------------------------------------
 
 CamelCase Method:
+#ex) 'hello world' --> 'HelloWorld'
 
 def camel_case(string):
     return ''.join([x[0].upper() + x[1:] for x in string.split()])
@@ -108,18 +127,23 @@ def camel_case(string):
 -------------------------------------
 
 WeIrD StRiNg CaSe:
+#ex) 'hello world' --> 'HeLlO WoRlD'
 
 def to_weird_case(string):
     weird = []
     for x in string.split():
         letters = []
         for i,m in enumerate(x):
+        #find the index per letter 
+        #so I can manipulate based on every other letter
             if i % 2 == 0:
                 letters.append(m.upper())
             else:
                 letters.append(m.lower())
         weird.append(''.join(letters))
+        #joins words into nested list
     return ' '.join(weird)
+    #separates nested words by spaces
 
 def to_weird_case(string):
     weird = []
