@@ -4,18 +4,18 @@
 
 #last CD3 to end
 
-#-DONE- B307 == L305
+#B307 == L305
 
-#-DONE- SE01 == | count minus 5
+#SE01 == | count minus 5
 
-#-DONE- Add all the L104 segments up
+#Add all the L104 segments up
 
 #L305/B307 == L104 count (add all up)
 
 #GE01 = 1
 
 def lxSplitter():
-	with open('UPS-batch.txt', 'r+') as f:
+	with open('batch.txt', 'r+') as f:
 		for line in f:
 			LXsegments = line.split('LX')
 		return LXsegments
@@ -34,20 +34,12 @@ def lxFinder(data):
 	LXlist = []
 
 	#Looks for tracking number, N9*CN, then pulls out the containing LX segments
+	#searches list of split LX segments
 	while m < len(data):
-		if '1Z2051AW0307676569' in data[m]:
+
+		if '1ZV4118F036966335' in data[m]:
 			LXlist.append('LX' + data[m])
-		elif '1Z0264650349788061' in data[m]:
-			LXlist.append('LX' + data[m])
-		elif '1ZX97W340374087525' in data[m]:
-			LXlist.append('LX' + data[m])
-		elif '1Z51W3E80350224840' in data[m]:
-			LXlist.append('LX' + data[m])
-		elif '1Z7498950346451488' in data[m]:
-			LXlist.append('LX' + data[m])
-		elif '1Z1348YX0361281808' in data[m]:
-			LXlist.append('LX' + data[m])
-		elif '1ZA384A40347417554' in data[m]:
+		elif '1Z4507890372552575' in data[m]:
 			LXlist.append('LX' + data[m])
 		else:
 			pass
@@ -205,7 +197,7 @@ def main():
 
 	#L1 = 
 	#x = TotalSum(dater)
-	print 'Changing B307 and L305 to L104 total'
+	print 'Changing B307 and L307 to L104 total'
 	print '\n'
 
 	totalSum(dater)
@@ -214,7 +206,7 @@ def main():
 	print '\n\n'
 
 	#print dater
-	print 'Writing new file, UPS-redrop, to Desktop..'
+	print 'Writing new file, UPS-redrop.txt, to Desktop..'
 
 	fileWriter(dater)
 
