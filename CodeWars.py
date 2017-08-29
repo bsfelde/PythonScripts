@@ -72,6 +72,7 @@ def accum(s):
     for i,x in enumerate(s):
         new.append(x.upper()+ (x.lower()*i))
     return '-'.join(new)
+    #join letters, separated by a dash
 
 def accum(s):
     return '-'.join([x.upper() + (x.lower()*i) for i,x in enumerate(s)])
