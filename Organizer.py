@@ -1,6 +1,6 @@
 import os, shutil
 
-path = 'C:/Users/bsfelde/Desktop/'
+path = 'C:/Users/bsfelde/Downloads/'
 dest = 'C:/Users/bsfelde/OneDrive for Business'
 
 for f in os.listdir(path):
